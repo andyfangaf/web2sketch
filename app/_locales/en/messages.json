@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "web2sketch",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Shopify Hack Days &#39;16",
+    "description": "The description of the application"
+  }
+}
