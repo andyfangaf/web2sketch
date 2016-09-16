@@ -1,4 +1,4 @@
 .web2sketch--highlighted {
-  box-shadow: 3px 0 0 #329cda;
-  transition-duration: 0.2s;
+  outline: 3px solid #329cda;
+  transition-duration: 0.1s;
 }
