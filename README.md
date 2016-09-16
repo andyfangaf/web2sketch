@@ -4,4 +4,6 @@
 
 1. `npm install`
 2. `gulp watch`
-3. Load chrome extension
+3. Load unpacked chrome extension in the `app` directory
+
+Files are compiled from `scripts.babel/*.js` to `scripts/*.js`.
