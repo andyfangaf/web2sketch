@@ -1,11 +1,10 @@
-chrome.runtime.onInstalled.addListener(details => {
-  console.log('previousVersion', details.previousVersion);
-});
-
 chrome.browserAction.setBadgeText({text: 'Make'});
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+  chrome.browserAction.setBadgeText({text: 'Creating'});
   if (request == 'screenshot') {
-    sendResponse('sc')
-  }
+    chrome.tabs.captureVisibleTab(null, {}, function(data) {
+      console.log("screenshotData: " + data);
+    }
+  })
 })
