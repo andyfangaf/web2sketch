@@ -9,7 +9,6 @@ document.body.addEventListener('mouseout', function(evt) {
 document.body.addEventListener('click', function(evt) {
   console.log('clicked');
   chrome.runtime.sendMessage('screenshot', function(response) {
-    console.log(response);
     createImage(response)
   })
 })
@@ -23,9 +22,10 @@ function appendToBody(dataURL) {
 function createImage(dataURL) {
   const canvas = createCanvas(window.innerWidth, window.innerHeight)
   const context = canvas.getContext('2d')
-  const croppedImage = new Image()
+  const croppedImage = document.createElement('img')
 
   croppedImage.onload = function() {
+    debugger; // NOT BEING FIRED
     // parameter 1: source image (screenshot)
     // parameter 2: source image x coordinate
     // parameter 3: source image y coordinate
@@ -39,6 +39,7 @@ function createImage(dataURL) {
     context.drawImage(croppedImage, 10, 10, 300, 300, 0, 0, 250, 250)
     appendToBody(canvas.toDataURL())
   }
+
 }
 
 function createCanvas(canvasWidth, canvasHeight) {
