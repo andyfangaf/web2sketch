@@ -16,12 +16,7 @@
   },
   "permissions": [
     "tabs",
-    "http://*/*",
-    "https://*/*",
-    "clipboardRead",
-    "clipboardWrite",
-    "notifications",
-    "storage"
+    "<all_urls>"
   ],
   "content_scripts": [
     {
@@ -44,10 +39,6 @@
       "19": "images/icon-19.png",
       "38": "images/icon-38.png"
     },
-    "default_title": "web2sketch",
-    "default_popup": "popup.html"
-  },
-  "web_accessible_resources": [
-    "images/icon-48.png"
-  ]
+    "default_title": "web2sketch"
+  }
 }

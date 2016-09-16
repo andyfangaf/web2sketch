@@ -1,8 +1,6 @@
-
-
 document.body.addEventListener('mouseover', function(evt) {
-  console.log(evt.target);
   evt.target.classList.add('web2sketch--highlighted')
+  console.log(evt.target);
 })
 
 document.body.addEventListener('mouseout', function(evt) {
@@ -10,6 +8,8 @@ document.body.addEventListener('mouseout', function(evt) {
 })
 
 document.body.addEventListener('click', function(evt) {
-  evt.preventDefault()
-  evt.stopPropagation()
+  console.log('clicked');
+  chrome.runtime.sendMessage('screenshot', function(response) {
+    console.log(response);
+  })
 })
