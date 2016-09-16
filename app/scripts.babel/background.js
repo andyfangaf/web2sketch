@@ -8,3 +8,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     }
   })
 })
+
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+  console.log("Received from tab: ", sender.tab);
+});
